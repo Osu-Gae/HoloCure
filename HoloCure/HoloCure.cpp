@@ -1,5 +1,4 @@
 ﻿#include "pch.h"
-#include "framework.h"
 #include "HoloCure.h"
 
 #define MAX_LOADSTRING 100
@@ -8,7 +7,7 @@
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
-
+HWND g_hWnd;
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
@@ -39,18 +38,42 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_HOLOCURE));
 
     MSG msg;
+    msg.message = WM_NULL;
 
     // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+    while (true)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+        // PM_REMOVE : 읽어옴과 동시에 메시지를 큐에서 삭제
+        // PM_NOREMOVE : 메시지 큐에 메시지가 있는지 존재만 파악, 메시지를 읽어오려면 GetMessage함수를 다시 호출해야 함
+
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
+            if (WM_QUIT == msg.message)
+                break;
+
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
         }
+
+        else
+        {
+
+            /*if (dwTime + 10 < GetTickCount64())
+            {
+                MainGame.Update();
+                MainGame.Late_Update();
+                MainGame.Render();
+
+                dwTime = GetTickCount64();
+            }*/
+        }
+
     }
 
-    return (int) msg.wParam;
+    return (int)msg.wParam;
 }
 
 
@@ -74,7 +97,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_HOLOCURE));
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_HOLOCURE);
+    wcex.lpszMenuName = NULL;
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
@@ -94,14 +117,23 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
+   
+   RECT rc{ 0, 0, WINCX, WINCY };
 
+   // rc = rc  + 기본 창 옵션 설정 값 그대로 + 메뉴 바 크기를 고려할 지 여부
+
+   AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
+   
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+       CW_USEDEFAULT, 0,
+       rc.right - rc.left,
+       rc.bottom - rc.top, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
       return FALSE;
    }
+   g_hWnd = hWnd;
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
@@ -140,14 +172,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-            EndPaint(hWnd, &ps);
-        }
-        break;
+
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
