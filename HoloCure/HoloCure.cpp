@@ -2,6 +2,7 @@
 #include "HoloCure.h"
 #include "CMainGame.h"
 #include "CTimeMgr.h"
+#include "CPngMgr.h"
 
 #define MAX_LOADSTRING 100
 // gdi
@@ -91,6 +92,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
 
     }
+	CPngMgr::Get_Instance().Release();
     ShutdownGDIPlus();
     return (int)msg.wParam;
 }

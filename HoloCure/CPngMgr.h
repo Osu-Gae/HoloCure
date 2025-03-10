@@ -91,7 +91,7 @@ public:
     }
 private:
     CPngMgr() = default;
-    ~CPngMgr() { Release(); }
+    ~CPngMgr() = default;
     unordered_map<wstring, Gdiplus::Image*> m_mapPng;
 };
 
