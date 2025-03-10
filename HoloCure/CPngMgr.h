@@ -89,6 +89,24 @@ public:
             graphics.DrawImage(pImage, destRect, srcRect.X, srcRect.Y, srcRect.Width, srcRect.Height, Gdiplus::UnitPixel);
         }
     }
+    void DrawPngRotated(HDC hDC, const wstring& key, int x, int y, int width, int height, float angle) {
+        Gdiplus::Image* pImage = Find_Png(key);
+        if (pImage) {
+            Gdiplus::Graphics graphics(hDC);
+            graphics.SetInterpolationMode(Gdiplus::InterpolationModeHighQualityBicubic);
+
+            // 중심을 기준으로 회전하기 위해 변환 설정
+            graphics.TranslateTransform(x + width / 2.0f, y + height / 2.0f);
+            graphics.RotateTransform(angle);
+            graphics.TranslateTransform(-(x + width / 2.0f), -(y + height / 2.0f));
+
+            // 이미지 출력
+            graphics.DrawImage(pImage, x, y, width, height);
+
+            // 변환 초기화
+            graphics.ResetTransform();
+        }
+    }
 private:
     CPngMgr() = default;
     ~CPngMgr() = default;
