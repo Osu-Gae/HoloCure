@@ -13,15 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="00. MainGame">
+      <UniqueIdentifier>{87d3f1ed-8ef3-48e9-9c3c-793dcd57efad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Mgr">
+      <UniqueIdentifier>{acd0a0cb-0948-4083-9d99-d99649100dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Mgr\CSceneMgr">
+      <UniqueIdentifier>{ba403366-9774-4a2a-be28-1e8f51c40ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Mgr\CBmpMgr">
+      <UniqueIdentifier>{6ba1d032-ef23-4866-bb26-6898a14bfc9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Mgr\CTimeMgr">
+      <UniqueIdentifier>{9e9eaa2b-5bcb-4981-b79e-e2c19c3bd57f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene">
+      <UniqueIdentifier>{249cb1f2-2856-45c8-a45e-6b1b060db9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Mgr\CKeyMgr">
+      <UniqueIdentifier>{f0aca4fb-2b07-4335-9ae8-893f5f3c344c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\01. Logo">
+      <UniqueIdentifier>{6848387f-a195-40aa-b4db-179f9b4c1183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\02. Loading">
+      <UniqueIdentifier>{d47250b8-0276-4c86-a857-a76d817ec0b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\03. Title">
+      <UniqueIdentifier>{8f0de5d0-6df5-4060-8d84-34d9a63dd91b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\04. Chose">
+      <UniqueIdentifier>{99753056-0fc5-4dbe-a5e4-d76bc1246a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\05. Stage">
+      <UniqueIdentifier>{72090ca7-e44c-4dc8-83e1-5eb018a40d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. CObj">
+      <UniqueIdentifier>{d97cb414-4215-46b3-bada-2f3255b0297b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="HoloCure.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
@@ -30,13 +63,106 @@
     <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CMainGame.h">
+      <Filter>00. MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="HoloCure.h">
+      <Filter>00. MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>01. Mgr\CSceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CBmpMgr.h">
+      <Filter>01. Mgr\CBmpMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyBmp.h">
+      <Filter>01. Mgr\CBmpMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeMgr.h">
+      <Filter>01. Mgr\CTimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>02. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CPngMgr.h">
+      <Filter>01. Mgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogo.h">
+      <Filter>02. Scene\01. Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="CStage.h">
+      <Filter>02. Scene\05. Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="CTitle.h">
+      <Filter>02. Scene\03. Title</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>01. Mgr\CKeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CObj.h">
+      <Filter>03. CObj</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>03. CObj</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>03. CObj</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HoloCure.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CMainGame.cpp">
+      <Filter>00. MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="HoloCure.cpp">
+      <Filter>00. MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>01. Mgr\CSceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CBmpMgr.cpp">
+      <Filter>01. Mgr\CBmpMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyBmp.cpp">
+      <Filter>01. Mgr\CBmpMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeMgr.cpp">
+      <Filter>01. Mgr\CTimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogo.cpp">
+      <Filter>02. Scene\01. Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="CStage.cpp">
+      <Filter>02. Scene\05. Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="CTitle.cpp">
+      <Filter>02. Scene\03. Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>01. Mgr\CKeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CObj.cpp">
+      <Filter>03. CObj</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>03. CObj</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>03. CObj</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMgr.cpp">
+      <Filter>01. Mgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@
 
 // 여기에 미리 컴파일하려는 헤더 추가
 #include "targetver.h"
-#define WIN32_LEAN_AND_MEAN             // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다.
+// #define WIN32_LEAN_AND_MEAN             // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다.
 #include <windows.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -17,5 +17,21 @@
 #include <tchar.h>
 
 #include "Define.h"
+#include <map>
+#include <unordered_map>
+#include <vector>
+#include <list>
+#include <array>
+#include <algorithm>	
+#include <string>
+#include <memory>
+#include <cmath>
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
+
+
+using namespace Gdiplus;
+using namespace std;
+
 
 #endif //PCH_H

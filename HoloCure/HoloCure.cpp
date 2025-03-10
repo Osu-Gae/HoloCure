@@ -1,13 +1,28 @@
 ﻿#include "pch.h"
 #include "HoloCure.h"
+#include "CMainGame.h"
+#include "CTimeMgr.h"
 
 #define MAX_LOADSTRING 100
+// gdi
+Gdiplus::GdiplusStartupInput g_GdiPlusStartupInput;
+ULONG_PTR g_GdiPlusToken;
+void InitGDIPlus() {
+    Gdiplus::GdiplusStartup(&g_GdiPlusToken, &g_GdiPlusStartupInput, NULL);
+}
+void ShutdownGDIPlus() {
+    Gdiplus::GdiplusShutdown(g_GdiPlusToken);
+}
+//-----------------------
 
 // 전역 변수:
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 HWND g_hWnd;
+
+int Playerx = 0;
+int Playery = 0;
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
@@ -23,6 +38,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: 여기에 코드를 입력합니다.
+    InitGDIPlus();
 
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -39,6 +55,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
     msg.message = WM_NULL;
+
+    CMainGame MainGame;
+	MainGame.Initialize();
+	CTimeMgr::GetInstance().Initialize();
 
     // 기본 메시지 루프입니다:
     while (true)
@@ -60,19 +80,18 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
         else
         {
-
-            /*if (dwTime + 10 < GetTickCount64())
-            {
-                MainGame.Update();
-                MainGame.Late_Update();
-                MainGame.Render();
-
-                dwTime = GetTickCount64();
-            }*/
+			// 매니저 업데이트는 여기서 하는게 아니라 CMainGame이나 CSceneMgr에서 해야함
+            CTimeMgr::GetInstance().Update();
+   
+			/*std::wstring title = L"Time: " + std::to_wstring(CTimeMgr::GetInstance().GetTime();
+            SetWindowText(g_hWnd, title.c_str());*/
+            MainGame.Update();
+            MainGame.LateUpdate();
+            MainGame.Render();
         }
 
     }
-
+    ShutdownGDIPlus();
     return (int)msg.wParam;
 }
 
