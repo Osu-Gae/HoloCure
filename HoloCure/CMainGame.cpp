@@ -36,8 +36,10 @@ void CMainGame::Render()
 
 	HDC hBackDC = CBmpMgr::Get_Instance()->Find_Img(L"Back");
 
+
 	// 백 버퍼에 배경 렌더링
 	BitBlt(hMemDC, 0, 0, WINCX, WINCY, hBackDC, 0, 0, SRCCOPY);
+
 
 	// 게임 씬 렌더링
 	CSceneMgr::Get_Instance().Render(hMemDC);

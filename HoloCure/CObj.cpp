@@ -1,11 +1,10 @@
 #include "pch.h"
 #include "CObj.h"
 
-CObj::CObj() : m_fSpeed(0.f), m_bDead(false), m_bReverse(false)
+CObj::CObj() : m_fSpeed(0.f), m_bDead(false), m_bReverse(false), m_fRadius(0.f)
 {
 	ZeroMemory(&m_tInfo, sizeof(INFO));
 	ZeroMemory(&m_tRect, sizeof(RECT));
-	ZeroMemory(&m_tHitBox, sizeof(RECT));
 	ZeroMemory(&m_tFrame, sizeof(FRAME));
 }
 

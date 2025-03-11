@@ -7,6 +7,8 @@
 
 #define VK_MAX 0xff
 
+#define TILEXY 160
+
 extern HWND g_hWnd;
 extern int Playerx, Playery;
 

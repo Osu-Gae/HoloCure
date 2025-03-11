@@ -21,27 +21,29 @@ void CStage::Initialize()
 	monster1->Set_Id(3);
 	CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_MONSTER, monster1);
 
-	//shared_ptr<CMonster> monster2 = make_shared<CMonster>();
-	//monster2->Initialize();
-	//monster2->Set_Id(4);
-	//CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_MONSTER, monster2);
+	CTileMgr::Get_Instance().Initialize();
+
 
 	CPngMgr::Get_Instance().Initailize();
 }
 
 void CStage::Update()
 {
+	CTileMgr::Get_Instance().Update();
 	CObjMgr::Get_Instance().Update();
 }
 
 void CStage::LateUpdate()
 {
+	CTileMgr::Get_Instance().LateUpdate();
 	CObjMgr::Get_Instance().Late_Update();
 }
 
 void CStage::Render(HDC hDC, int _iScrollX, int _iScrollY)
 {
-	CObjMgr::Get_Instance().Render(hDC);
+	CTileMgr::Get_Instance().Get_Instance().Render(hDC, _iScrollX, _iScrollY);
+	CObjMgr::Get_Instance().Render(hDC, _iScrollX , _iScrollY);
+
 }
 
 void CStage::Release()

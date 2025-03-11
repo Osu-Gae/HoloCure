@@ -11,6 +11,18 @@ public:
 		m_tInfo.fX = _fX;
 		m_tInfo.fY = _fY;
 	}
+	const float& Get_Pos_x()
+	{
+		return m_tInfo.fX;
+	}
+	const float& Get_Pos_y()
+	{
+		return m_tInfo.fY;
+	}
+	const RECT& Get_Rect()
+	{
+		return m_tRect;
+	}
 	const INFO& Get_Pos()
 	{
 		return m_tInfo;
@@ -26,9 +38,9 @@ public:
 protected:
 	INFO			m_tInfo;
 	RECT			m_tRect;   // 이미지용
-	RECT			m_tHitBox; // 히트박스
 	FRAME			m_tFrame;
 	float			m_fSpeed;
+	float			m_fRadius; // 히트박스
 	bool            m_bDead;
 	bool			m_bReverse;
 };

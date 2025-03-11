@@ -44,12 +44,12 @@ void CObjMgr::Late_Update()
 	}
 }
 
-void CObjMgr::Render(HDC hDC)
+void CObjMgr::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 {
 	for (size_t i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& pObj : m_ObjList[i])
-			pObj->Render(hDC,0,0);
+			pObj->Render(hDC, _iScrollX, _iScrollY);
 	}
 }
 

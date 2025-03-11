@@ -66,7 +66,7 @@ void CPlayer::Initialize()
 	m_tInfo = { WINCX >> 1 , WINCY >> 1, 128.f, 128.f };
 	m_tFrame = { 0 , 5, RUN ,CTimeMgr::GetInstance().GetTime(),0.1 };
 	m_fSpeed = 200.f;
-
+	m_fRadius = 20.f;
 }
 
 void CPlayer::Update()
@@ -87,12 +87,12 @@ void CPlayer::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 	//CPngMgr::Get_Instance().DrawPng(hDC, L"Player_watson", m_tRect.left, m_tRect.top,m_tInfo.fCX, m_tInfo.fCY);
 	if (m_bReverse)
 	{
-		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Player_watson_Rev", m_tRect.left, m_tRect.top,
+		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Player_watson_Rev", m_tRect.left + _iScrollX, m_tRect.top + _iScrollY,
 			m_tInfo.fCX, m_tInfo.fCY, m_tFrame.iStart * m_tInfo.fCX, m_tFrame.iMotion * m_tInfo.fCY, m_tInfo.fCX, m_tInfo.fCY);
 	}
 	else
 	{
-		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Player_watson", m_tRect.left, m_tRect.top,
+		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Player_watson", m_tRect.left + _iScrollX, m_tRect.top + _iScrollY,
 			m_tInfo.fCX, m_tInfo.fCY, m_tFrame.iStart * m_tInfo.fCX, m_tFrame.iMotion * m_tInfo.fCY, m_tInfo.fCX, m_tInfo.fCY);
 	}
 

@@ -24,8 +24,6 @@ void CMonster::Update()
 	m_tInfo.fX += (Playerx - m_tInfo.fX) / dis * m_fSpeed * CTimeMgr::GetInstance().GetDeltaTime();
 	m_tInfo.fY +=  (Playery - m_tInfo.fY) / dis * m_fSpeed * CTimeMgr::GetInstance().GetDeltaTime();
 	CObj::Update_Rect();
-	std::wstring title = L"Time: " + std::to_wstring(m_tInfo.fX);
-	SetWindowText(g_hWnd, title.c_str());
 	Move_Frame();
 }
 
@@ -46,12 +44,12 @@ void CMonster::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 {
 	if (!m_bReverse)
 	{
-		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Monster", m_tRect.left, m_tRect.top,
+		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Monster", m_tRect.left + _iScrollX, m_tRect.top + _iScrollY,
 			m_tInfo.fCX, m_tInfo.fCY, m_tFrame.iStart * m_tInfo.fCX, m_tFrame.iMotion * m_tInfo.fCY, m_tInfo.fCX, m_tInfo.fCY);
 	}
 	else
 	{
-		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Monster_Rev", m_tRect.left, m_tRect.top,
+		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Monster_Rev", m_tRect.left + _iScrollX, m_tRect.top + _iScrollY,
 			m_tInfo.fCX, m_tInfo.fCY, m_tFrame.iStart * m_tInfo.fCX, m_tFrame.iMotion * m_tInfo.fCY, m_tInfo.fCX, m_tInfo.fCY);
 	}
 }

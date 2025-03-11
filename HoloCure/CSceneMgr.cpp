@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CSceneMgr.h"
-
+#include "CCamera.h"
 CSceneMgr::CSceneMgr() : m_ePreScene(SCENEID::END), m_eCurScene(SCENEID::LOGO), m_pScene(nullptr)
 {
 }
@@ -30,6 +30,7 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 		}
 
 		m_pScene->Initialize();
+		CCamera::Get_Instance().ClearXY();
 		m_ePreScene = m_eCurScene;
 	}
 }
@@ -41,6 +42,7 @@ void CSceneMgr::Initialize()
 
 void CSceneMgr::Update()
 {
+	CCamera::Get_Instance().Update();
 	m_pScene->Update();
 }
 
@@ -51,7 +53,8 @@ void CSceneMgr::LateUpdate()
 
 void CSceneMgr::Render(HDC hDC)
 {
-	m_pScene->Render(hDC, 0, 0);
+	CCamera::Get_Instance().Get_ScrollX();
+	m_pScene->Render(hDC, CCamera::Get_Instance().Get_ScrollX(), CCamera::Get_Instance().Get_ScrollY());
 }
 
 void CSceneMgr::Release()

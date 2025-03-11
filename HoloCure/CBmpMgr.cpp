@@ -25,6 +25,7 @@ HDC CBmpMgr::Find_Img(const TCHAR* pImgKey)
 void CBmpMgr::Initialize()
 {
 	Insert_Bmp(L"../Image/BackBuffer.bmp", L"Back");
+	Insert_Bmp(L"../Image/Obj/Ground/G.bmp", L"Ground");
 }
 
 void CBmpMgr::Insert_Bmp(const TCHAR* pFilePath, const TCHAR* pImgKey)

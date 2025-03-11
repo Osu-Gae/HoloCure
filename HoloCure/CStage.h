@@ -7,6 +7,7 @@
 #include "CPlayer.h"
 #include "CPngMgr.h"
 #include "CMonster.h"
+#include "CTileMgr.h"
 class CStage : public CScene
 {
 public:

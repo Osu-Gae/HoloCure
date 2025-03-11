@@ -147,7 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CAbstractFactory.h" />
     <ClInclude Include="CBmpMgr.h" />
+    <ClInclude Include="CCamera.h" />
+    <ClInclude Include="CColliderMgr.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CLogo.h" />
     <ClInclude Include="CMainGame.h" />
@@ -160,6 +163,8 @@
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CStage.h" />
+    <ClInclude Include="CTile.h" />
+    <ClInclude Include="CTileMgr.h" />
     <ClInclude Include="CTimeMgr.h" />
     <ClInclude Include="CTitle.h" />
     <ClInclude Include="HoloCure.h" />
@@ -169,7 +174,10 @@
     <ClInclude Include="Define.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CAbstractFactory.cpp" />
     <ClCompile Include="CBmpMgr.cpp" />
+    <ClCompile Include="CCamera.cpp" />
+    <ClCompile Include="CColliderMgr.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CLogo.cpp" />
     <ClCompile Include="CMainGame.cpp" />
@@ -181,6 +189,8 @@
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CStage.cpp" />
+    <ClCompile Include="CTile.cpp" />
+    <ClCompile Include="CTileMgr.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />
     <ClCompile Include="CTitle.cpp" />
     <ClCompile Include="HoloCure.cpp" />

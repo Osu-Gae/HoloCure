@@ -84,8 +84,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 			// 매니저 업데이트는 여기서 하는게 아니라 CMainGame이나 CSceneMgr에서 해야함
             CTimeMgr::GetInstance().Update();
    
-			/*std::wstring title = L"Time: " + std::to_wstring(CTimeMgr::GetInstance().GetTime();
-            SetWindowText(g_hWnd, title.c_str());*/
+			std::wstring title = L"Time: " + std::to_wstring(CTimeMgr::GetInstance().GetDeltaTime());
+            SetWindowText(g_hWnd, title.c_str());
             MainGame.Update();
             MainGame.LateUpdate();
             MainGame.Render();

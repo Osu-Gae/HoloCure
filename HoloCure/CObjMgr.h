@@ -17,7 +17,7 @@ public:
 	void		Add_Object(OBJID eID, shared_ptr<CObj> pObj = nullptr);
 	void		Update();
 	void		Late_Update();
-	void		Render(HDC hDC);
+	void		Render(HDC hDC, const int& _iScrollX, const int& _iScrollY);
 	void		Release();
 	void		Delete_Obj(OBJID eID);
 

@@ -8,6 +8,7 @@ public:
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Player/Player_Rev.png", L"Player_watson_Rev");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Monster/Monster.png", L"Monster");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Monster/Monster_Rev.png", L"Monster_Rev");
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ground/Ground.png", L"Ground");
     }
 public:
     static CPngMgr& Get_Instance() {
