@@ -3,6 +3,7 @@
 #include "CPngMgr.h"
 #include "CKeyMgr.h"
 #include "CTimeMgr.h"
+#include "CBmpMgr.h"
 class CPlayer : public CObj
 {
 public:

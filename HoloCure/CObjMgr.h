@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CObj.h"
-
+#include "CColliderMgr.h"
 class CObjMgr
 {
 private:

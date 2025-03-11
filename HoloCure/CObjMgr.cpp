@@ -32,6 +32,8 @@ void CObjMgr::Update()
 
 void CObjMgr::Late_Update()
 {
+	CColliderMgr::Collision_Monster(m_ObjList[OBJ_MONSTER]);
+	CColliderMgr::Collision_Circle(m_ObjList[OBJ_PLAYER], m_ObjList[OBJ_MONSTER]);
 	for (size_t i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& pObj : m_ObjList[i])

@@ -14,7 +14,9 @@ void CMonster::Initialize()
 	m_tInfo = { WINCX >> 1 , WINCY >> 1, 128.f, 128.f };
 	m_tFrame = { 0 , 5, 0 ,CTimeMgr::GetInstance().GetTime(),0.1 }; // 여기서는 세번째 인자가 몬스터 종류임 
 	m_fSpeed = 150.f;
-
+	m_fRadius = 10.f;
+	m_iAttack = 2;
+	m_iHp = 10;
 }
 
 void CMonster::Update()

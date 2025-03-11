@@ -26,6 +26,9 @@ void CBmpMgr::Initialize()
 {
 	Insert_Bmp(L"../Image/BackBuffer.bmp", L"Back");
 	Insert_Bmp(L"../Image/Obj/Ground/G.bmp", L"Ground");
+	Insert_Bmp(L"../Image/Obj/Ui/Red_Hp.bmp", L"Red_Hp");
+	Insert_Bmp(L"../Image/Obj/Ui/Green_Hp.bmp", L"Green_Hp");
+	Insert_Bmp(L"../Image/Obj/Ui/Watson_Portrait.bmp", L"Watson_Portrait");
 }
 
 void CBmpMgr::Insert_Bmp(const TCHAR* pFilePath, const TCHAR* pImgKey)
