@@ -29,6 +29,11 @@ void CBmpMgr::Initialize()
 	Insert_Bmp(L"../Image/Obj/Ui/Red_Hp.bmp", L"Red_Hp");
 	Insert_Bmp(L"../Image/Obj/Ui/Green_Hp.bmp", L"Green_Hp");
 	Insert_Bmp(L"../Image/Obj/Ui/Watson_Portrait.bmp", L"Watson_Portrait");
+	Insert_Bmp(L"../Image/Obj/Ui/ExpAni.bmp", L"ExpAni");
+	Insert_Bmp(L"../Image/Obj/Ui/PlayerUi.bmp", L"PlayerUi");
+	Insert_Bmp(L"../Image/Obj/Ui/PlayerHp.bmp", L"PlayerHp");
+	Insert_Bmp(L"../Image/Obj/Ui/StageUi.bmp", L"StageUi");
+	Insert_Bmp(L"../Image/Obj/Ui/KillCount.bmp", L"KillCount");
 }
 
 void CBmpMgr::Insert_Bmp(const TCHAR* pFilePath, const TCHAR* pImgKey)

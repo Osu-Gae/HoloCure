@@ -73,9 +73,9 @@ void CPlayer::Initialize()
 
 void CPlayer::Update()
 {
-	CTimeMgr::GetInstance().Update();
+	/*CTimeMgr::GetInstance().Update();
 	std::wstring title = L"Time: " + std::to_wstring(m_iHp);
-	SetWindowText(g_hWnd, title.c_str()); 
+	SetWindowText(g_hWnd, title.c_str()); */
 	m_fInvincibleTime -= CTimeMgr::GetInstance().GetDeltaTime();
 	Key_Input();
 	Move_Frame();

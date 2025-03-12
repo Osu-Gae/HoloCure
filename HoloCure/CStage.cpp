@@ -38,6 +38,7 @@ void CStage::Update()
 {
 	CTileMgr::Get_Instance().Update();
 	CObjMgr::Get_Instance().Update();
+	CUiMgr::Get_Instance()->Update();
 }
 
 void CStage::LateUpdate()
@@ -50,9 +51,10 @@ void CStage::Render(HDC hDC, int _iScrollX, int _iScrollY)
 {
 	CTileMgr::Get_Instance().Get_Instance().Render(hDC, _iScrollX, _iScrollY);
 	CObjMgr::Get_Instance().Render(hDC, _iScrollX , _iScrollY);
-
+	CUiMgr::Get_Instance()->Render(hDC, _iScrollX, _iScrollY);
 }
 
 void CStage::Release()
 {
+	CUiMgr::Get_Instance()->Destroy_Instance();
 }

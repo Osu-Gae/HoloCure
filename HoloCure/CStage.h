@@ -8,6 +8,7 @@
 #include "CPngMgr.h"
 #include "CMonster.h"
 #include "CTileMgr.h"
+#include "CUiMgr.h"
 class CStage : public CScene
 {
 public:

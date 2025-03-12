@@ -56,8 +56,8 @@ void CTileMgr::Render(HDC hDC ,const int& _iScrollX, const int& _iScrollY)
 	int	iScrollX = -(int)CCamera::Get_Instance().Get_ScrollX() / 160-2;
 	int	iScrollY = -(int)CCamera::Get_Instance().Get_ScrollY() / 160-2;
 
-	int	 iMaxX = iScrollX + WINCX / 160 + 2;
-	int	 iMaxY = iScrollY + WINCY / 160 + 2;
+	int	 iMaxX = iScrollX + WINCX / 160 + 3;
+	int	 iMaxY = iScrollY + WINCY / 160 + 3;
 	for (int i = 0;i<16;i++)
 	{
 		for (int j = 0; j < 16; j++)

@@ -67,6 +67,9 @@
     <Filter Include="01. Mgr\CColliderMgr">
       <UniqueIdentifier>{42bb9bb7-c3f1-45b6-8612-644f4de67314}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Ui">
+      <UniqueIdentifier>{09bad974-3a36-4a9b-a982-dd21ec431544}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -144,6 +147,21 @@
     <ClInclude Include="CColliderMgr.h">
       <Filter>01. Mgr\CColliderMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CUiMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CExpBar.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerUi.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeUi.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CKillUi.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -208,6 +226,21 @@
     </ClCompile>
     <ClCompile Include="CColliderMgr.cpp">
       <Filter>01. Mgr\CColliderMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CUiMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CExpBar.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerUi.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeUi.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CKillUi.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

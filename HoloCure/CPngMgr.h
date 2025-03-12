@@ -9,6 +9,8 @@ public:
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Monster/Monster.png", L"Monster");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Monster/Monster_Rev.png", L"Monster_Rev");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ground/Ground.png", L"Ground");
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/ExpBar.png", L"ExpBar");
+
     }
 public:
     static CPngMgr& Get_Instance() {

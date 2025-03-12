@@ -85,6 +85,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             /*CTimeMgr::GetInstance().Update();
 			std::wstring title = L"Time: " + std::to_wstring(CTimeMgr::GetInstance().GetDeltaTime());
             SetWindowText(g_hWnd, title.c_str());*/
+            CTimeMgr::GetInstance().Update();
             MainGame.Update();
             MainGame.LateUpdate();
             MainGame.Render();
