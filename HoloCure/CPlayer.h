@@ -4,6 +4,8 @@
 #include "CKeyMgr.h"
 #include "CTimeMgr.h"
 #include "CBmpMgr.h"
+#include "CUiMgr.h"
+#include "CItem.h"
 class CPlayer : public CObj
 {
 public:
@@ -18,7 +20,17 @@ public:
 	void LateUpdate() override;
 	void Render(HDC hDC, const int& _iScrollX, const int& _iScrollY) override;
 	void Release() override;
+	
+public:
+	enum ItemType {
+		Active,
+		Passive
+	};
+	void Push_Item(CItem _item , ItemType _type);
+
 private:
 	enum State{RUN, IDLE};
+	vector<CItem> m_vecActiveItem;
+	vector<CItem> m_vecPassiveItem;
 };
 

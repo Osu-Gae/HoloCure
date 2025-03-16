@@ -10,6 +10,7 @@
 // 여기에 미리 컴파일하려는 헤더 추가
 #include "targetver.h"
 // #define WIN32_LEAN_AND_MEAN             // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다.
+
 #include <windows.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -30,7 +31,20 @@
 #pragma comment(lib, "gdiplus.lib")
 
 
+#include <Vfw.h>
+#pragma comment(lib, "vfw32.lib")
+
+#include <io.h>
+#include <iostream>
+
+#include "fmod.h"
+#include "fmod.hpp"
+
+#pragma comment(lib, "fmodex_vc.lib")
+
 using namespace Gdiplus;
 using namespace std;
+
+
 
 #endif //PCH_H

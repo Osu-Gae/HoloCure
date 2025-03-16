@@ -15,7 +15,7 @@ void CKillUi::Initialize()
 
 void CKillUi::Update()
 {
-	m_iKillCount++;
+
 }
 
 void CKillUi::LateUpdate()

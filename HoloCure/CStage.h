@@ -9,6 +9,12 @@
 #include "CMonster.h"
 #include "CTileMgr.h"
 #include "CUiMgr.h"
+#include "CPoison.h"
+#include "CLava.h"
+#include "CBullet.h"
+#include "CBullet.h"
+#include "CCamera.h"
+#include "CBoomerang.h"
 class CStage : public CScene
 {
 public:

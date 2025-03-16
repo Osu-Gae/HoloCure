@@ -2,6 +2,7 @@
 #include "CMainGame.h"
 #include "CSceneMgr.h"
 #include "CBmpMgr.h"
+#include "CSoundMgr.h"
 CMainGame::CMainGame()
 {
 }
@@ -13,7 +14,7 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
-
+	CSoundMgr::Get_Instance()->Initialize();
 	CBmpMgr::Get_Instance()->Initialize();
 	CSceneMgr::Get_Instance().Initialize();
 }
@@ -55,4 +56,5 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
+	CSoundMgr::Get_Instance()->Release();
 }

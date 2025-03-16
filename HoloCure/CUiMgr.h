@@ -4,6 +4,7 @@
 #include "CPlayerUi.h"
 #include "CTimeUi.h"
 #include "CKillUi.h"
+#include "CLevelUi.h"
 class CUiMgr
 {
 private:
@@ -27,12 +28,13 @@ public:
 	void Update(); // 애니메이션 용
 	void Render(HDC hDC, const int& _iScrollX, const int& _iScrollY);
 
-private:
+public:
 	static CUiMgr* m_pInstance;
 	CExpBar m_ExpBar;
 	CPlayerUi m_PlayerUi;
 	CTimeUi m_TimeUi;
 	CKillUi m_KillUi;
+	CLevelUi m_LevelUi;
 	// exp_bar
 	// Hp_bar
 	// Kill_count

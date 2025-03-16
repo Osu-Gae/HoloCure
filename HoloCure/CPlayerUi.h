@@ -1,5 +1,6 @@
 #pragma once
 #include "CBmpMgr.h"
+#include "CPngMgr.h"
 class CPlayerUi
 {
 public:

@@ -34,7 +34,24 @@ void CBmpMgr::Initialize()
 	Insert_Bmp(L"../Image/Obj/Ui/PlayerHp.bmp", L"PlayerHp");
 	Insert_Bmp(L"../Image/Obj/Ui/StageUi.bmp", L"StageUi");
 	Insert_Bmp(L"../Image/Obj/Ui/KillCount.bmp", L"KillCount");
+	Insert_Bmp(L"../Image/Obj/Item/Item_1.bmp", L"Item_1");
+	Insert_Bmp(L"../Image/Obj/Item/Item_2.bmp", L"Item_2");
+	Insert_Bmp(L"../Image/Obj/Item/Item_3.bmp", L"Item_3");
+	Insert_Bmp(L"../Image/Obj/Item/Item_4.bmp", L"Item_4");
+	Insert_Bmp(L"../Image/Obj/Item/Item_5.bmp", L"Item_5");
+	Insert_Bmp(L"../Image/Obj/Item/Item_6.bmp", L"Item_6");
+	Insert_Bmp(L"../Image/Obj/Item/Item_7.bmp", L"Item_7");
+	Insert_Bmp(L"../Image/Obj/Item/Item_Acttive_Slot.bmp", L"Item_Acttive_Slot");
+	Insert_Bmp(L"../Image/Obj/Monster/Monster.bmp", L"Monster");
+	Insert_Bmp(L"../Image/Obj/Monster/Monster_Rev.bmp", L"Monster_Rev");
+	Insert_Bmp(L"../Image/Obj/Monster/Monster_Damaged.bmp", L"Monster_Damaged");
+	Insert_Bmp(L"../Image/Obj/Monster/Monster_Damaged_Rev.bmp", L"Monster_Damaged_Rev");
+	Insert_Bmp(L"../Image/Obj/Player/Bullet.bmp", L"Bullet");
+	Insert_Bmp(L"../Image/Obj/Player/Plg.bmp", L"Plg");
+	Insert_Bmp(L"../Image/Obj/Player/Reset.bmp", L"Reset");
+	Insert_Bmp(L"../Image/Obj/Exp/Exp_sheet.bmp", L"Exp_sheet");
 }
+
 
 void CBmpMgr::Insert_Bmp(const TCHAR* pFilePath, const TCHAR* pImgKey)
 {

@@ -56,6 +56,34 @@ public:
 	{
 		return m_iAttack;
 	}
+	void Set_Attack(const int& _attack)
+	{
+		m_iAttack = _attack;
+	}
+	const bool& Get_Dead()
+	{
+		return m_bDead;
+	}
+	void Set_Dead(const bool& _dead)
+	{
+		m_bDead = _dead;
+	}
+	int Get_Exp()
+	{
+		return m_iExp;
+	}
+	void Set_Exp(int _exp)
+	{
+		m_iExp = _exp;
+	}
+	void Set_MaxExp(int _exp)
+	{
+		m_iMaxExp = _exp;
+	}
+	int Get_MaxExp()
+	{
+		return m_iMaxExp;
+	}
 	void Update_Rect();
 	void Move_Frame();
 public:
@@ -76,7 +104,12 @@ protected:
 	int				m_iHp;
 	int				m_iMaxHp;
 	int				m_iAttack;
+	float			m_fAttackSpeed;
+	float			m_fCritical;
+	float			m_fItemSpeed;
 	// 무적 시간
 	float			m_fInvincibleTime;
+	int				m_iExp;
+	int				m_iMaxExp;
 };
 

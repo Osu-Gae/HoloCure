@@ -16,6 +16,8 @@ public:
 public:
 	int GetExp() { return m_iExp; }
 	void SetExp(int _iExp) { m_iExp = _iExp; }
+	int GetMaxExp() { return m_iMaxExp; }
+	void SetMaxExp(int _iMaxExp) { m_iMaxExp = _iMaxExp; }
 private:
 	int m_iExp;
 	int m_iMaxExp;

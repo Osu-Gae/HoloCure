@@ -11,9 +11,8 @@
 
 extern HWND g_hWnd;
 extern int Playerx, Playery;
-
-enum OBJID { OBJ_MONSTER, OBJ_PLAYER, OBJ_FURNITURE ,OBJ_ITEM, OBJ_UI, OBJ_BUTTON, OBJ_MOUSE, OBJ_END };
-
+enum OBJID { OBJ_BULLET, OBJ_EXP,OBJ_MONSTER,OBJ_PLAYER,OBJ_FURNITURE ,OBJ_ITEM, OBJ_UI, OBJ_BUTTON, OBJ_MOUSE, OBJ_END };
+enum CHANNELID { SOUND_EFFECT,SOUND_DIE ,SOUND_BULLET, SOUND_EXP , SOUND_BGM, SOUND_END };
 typedef struct tagInfo
 {
 
@@ -45,3 +44,4 @@ typedef struct tagFrame
 	double	dwSpeed;
 
 }FRAME;
+

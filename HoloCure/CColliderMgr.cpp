@@ -16,6 +16,23 @@ void CColliderMgr::Collision_Circle(list<shared_ptr<CObj>> DstList, list<shared_
 	}
 }
 
+void CColliderMgr::Collision_Monster_Circle(list<shared_ptr<CObj>> DstList, list<shared_ptr<CObj>> SrcList)
+{
+	for (auto& pDst : DstList)
+	{
+		for (auto& pSrc : SrcList)
+		{
+			if (Check_Collison(pDst, pSrc) && pDst->Get_InvisibleTime() < 0)
+			{
+				//dynamic_pointer_cast<shared_ptr<CMonster>>(pDst.get())->Set_Damaged();
+				dynamic_pointer_cast<CMonster>(pDst)->Set_Damaged();
+				pDst->Set_HP(pSrc->Get_Attack());
+				pDst->Set_InvisibleTime(0.15f);
+			}
+		}
+	}
+}
+
 void CColliderMgr::Collision_Monster(list<shared_ptr<CObj>>& DstList)
 {
 	for (auto& pDst : DstList)
@@ -41,6 +58,21 @@ void CColliderMgr::Collision_Monster(list<shared_ptr<CObj>>& DstList)
 	}
 }
 
+void CColliderMgr::Collision_Exp(list<shared_ptr<CObj>> DstList, list<shared_ptr<CObj>> SrcList)
+{
+	for (auto& pDst : DstList)
+	{
+		for (auto& pSrc : SrcList)
+		{
+			if (Check_Collison(pDst, pSrc))
+			{
+				pDst->Set_Exp(pDst->Get_Exp() + pSrc->Get_Exp());
+				pSrc->Set_Dead(true);
+			}
+		}
+	}
+}
+
 bool CColliderMgr::Check_Collison(shared_ptr<CObj> Dst, shared_ptr<CObj> Src)
 {
 	float	fRadius = Dst->Get_Radius() + Src->Get_Radius();
@@ -55,5 +87,7 @@ bool CColliderMgr::Check_Collison(shared_ptr<CObj> Dst, shared_ptr<CObj> Src)
 
 	return fRadius >= fDiagonal;
 }
+
+
 
 

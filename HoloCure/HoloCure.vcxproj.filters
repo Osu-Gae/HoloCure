@@ -70,6 +70,24 @@
     <Filter Include="04. Ui">
       <UniqueIdentifier>{09bad974-3a36-4a9b-a982-dd21ec431544}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. CObj\Item">
+      <UniqueIdentifier>{40fdc3de-8ba9-459d-833e-644682d92fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. CObj\Player">
+      <UniqueIdentifier>{73d2d366-0d75-430b-9a67-0878198b9323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. CObj\Monster">
+      <UniqueIdentifier>{e11b2722-08c4-4147-861a-fd94769b0980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Mgr\CItemMgr">
+      <UniqueIdentifier>{4d41d1ef-7327-4249-84d2-2b12ec19b7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. CObj\Bullet">
+      <UniqueIdentifier>{980980ae-de8e-457d-947b-7d49869a5419}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. CObj\Exp">
+      <UniqueIdentifier>{01246108-823c-4123-ab97-4510fa91b538}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -123,12 +141,6 @@
     <ClInclude Include="CObj.h">
       <Filter>03. CObj</Filter>
     </ClInclude>
-    <ClInclude Include="CMonster.h">
-      <Filter>03. CObj</Filter>
-    </ClInclude>
-    <ClInclude Include="CPlayer.h">
-      <Filter>03. CObj</Filter>
-    </ClInclude>
     <ClInclude Include="CCamera.h">
       <Filter>01. Mgr\CCamera</Filter>
     </ClInclude>
@@ -147,20 +159,62 @@
     <ClInclude Include="CColliderMgr.h">
       <Filter>01. Mgr\CColliderMgr</Filter>
     </ClInclude>
-    <ClInclude Include="CUiMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CExpBar.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CPlayerUi.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CTimeUi.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>04. Ui</Filter>
     </ClInclude>
     <ClInclude Include="CKillUi.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerUi.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeUi.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CUiMgr.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CItem.h">
+      <Filter>03. CObj\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>03. CObj\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>03. CObj\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CItemMgr.h">
+      <Filter>01. Mgr\CItemMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundMgr.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletAx.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CPoison.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CLava.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CBoomerang.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CBl.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevelUi.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevelUpItem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CExp.h">
+      <Filter>03. CObj\Exp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -203,12 +257,6 @@
     <ClCompile Include="CObj.cpp">
       <Filter>03. CObj</Filter>
     </ClCompile>
-    <ClCompile Include="CMonster.cpp">
-      <Filter>03. CObj</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayer.cpp">
-      <Filter>03. CObj</Filter>
-    </ClCompile>
     <ClCompile Include="CCamera.cpp">
       <Filter>01. Mgr\CCamera</Filter>
     </ClCompile>
@@ -227,20 +275,62 @@
     <ClCompile Include="CColliderMgr.cpp">
       <Filter>01. Mgr\CColliderMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CUiMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CExpBar.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayerUi.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CTimeUi.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>04. Ui</Filter>
     </ClCompile>
     <ClCompile Include="CKillUi.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerUi.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeUi.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CUiMgr.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CItem.cpp">
+      <Filter>03. CObj\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>03. CObj\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>03. CObj\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CItemMgr.cpp">
+      <Filter>01. Mgr\CItemMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundMgr.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletAx.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CPoison.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CLava.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CBoomerang.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CBl.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevelUi.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevelUpItem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CExp.cpp">
+      <Filter>03. CObj\Exp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

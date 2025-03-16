@@ -37,7 +37,7 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 
 void CSceneMgr::Initialize()
 {
-	Scene_Change(SCENEID::STAGE);
+	Scene_Change(SCENEID::LOGO);
 }
 
 void CSceneMgr::Update()

@@ -19,12 +19,7 @@ void CExpBar::Initialize()
 void CExpBar::Update()
 {
 	frame++;
-	if (frame > 61)
-	{
-		frame = 0;
-		m_iExp++;
-	}
-	m_iExp %= 100;
+	frame %= 61;
 }
 
 void CExpBar::LateUpdate()

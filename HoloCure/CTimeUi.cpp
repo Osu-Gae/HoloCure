@@ -33,7 +33,7 @@ void CTimeUi::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 		RGB(0, 0, 0));
 	SetBkMode(hDC, TRANSPARENT);
 	TCHAR buffer[32];
-	wsprintf(buffer, _T("%02d/%02d"), int(m_fTime)/60, int(m_fTime) % 60); // int 값을 문자열로 변환
+	wsprintf(buffer, _T("%02d:%02d"), int(m_fTime)/60, int(m_fTime) % 60); // int 값을 문자열로 변환
 	TextOut(hDC, (WINCX >> 1) - 20, 70, buffer, lstrlen(buffer));
 }
 

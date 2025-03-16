@@ -10,7 +10,9 @@ public:
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Monster/Monster_Rev.png", L"Monster_Rev");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ground/Ground.png", L"Ground");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/ExpBar.png", L"ExpBar");
-
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/PlayerUiT.png", L"PlayerUiT");
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Item/Item_1.png", L"Item_1");
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/LevelUp.png", L"LevelUp");
     }
 public:
     static CPngMgr& Get_Instance() {

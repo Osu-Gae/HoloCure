@@ -3,7 +3,7 @@
 #include "CMainGame.h"
 #include "CTimeMgr.h"
 #include "CPngMgr.h"
-
+#include "CSoundMgr.h"
 #define MAX_LOADSTRING 100
 // gdi
 Gdiplus::GdiplusStartupInput g_GdiPlusStartupInput;
