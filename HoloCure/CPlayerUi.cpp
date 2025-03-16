@@ -51,7 +51,7 @@ void CPlayerUi::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 		0, 0,
 		86, 76,
 		RGB(0, 0, 0));
-	CPngMgr::Get_Instance().DrawPngWithAlpha(hDC, L"PlayerUiT"s, 0, 0, 398, 174, 0.5f);
+	/*CPngMgr::Get_Instance().DrawPngWithAlpha(hDC, L"PlayerUiT"s, 0, 0, 398, 174, 0.5f);*/
 	SetBkMode(hDC, TRANSPARENT);
 	TCHAR buffer[32];
 	wsprintf(buffer, _T("%d/%d"), m_iHp,m_iMaxHp); 

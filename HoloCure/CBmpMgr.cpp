@@ -42,6 +42,7 @@ void CBmpMgr::Initialize()
 	Insert_Bmp(L"../Image/Obj/Item/Item_6.bmp", L"Item_6");
 	Insert_Bmp(L"../Image/Obj/Item/Item_7.bmp", L"Item_7");
 	Insert_Bmp(L"../Image/Obj/Item/Item_Acttive_Slot.bmp", L"Item_Acttive_Slot");
+	Insert_Bmp(L"../Image/Obj/Item/Item_Slot.bmp", L"Item_Slot");
 	Insert_Bmp(L"../Image/Obj/Monster/Monster.bmp", L"Monster");
 	Insert_Bmp(L"../Image/Obj/Monster/Monster_Rev.bmp", L"Monster_Rev");
 	Insert_Bmp(L"../Image/Obj/Monster/Monster_Damaged.bmp", L"Monster_Damaged");

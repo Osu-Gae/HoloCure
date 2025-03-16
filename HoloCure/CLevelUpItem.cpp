@@ -35,7 +35,14 @@ void CLevelUpItem::Update()
 		{
 			CItem item;
 			item.SetItemId(m_iItemId);
-			dynamic_pointer_cast<CPlayer>(CObjMgr::Get_Instance().Get_Player())->Push_Item(item, CPlayer::ItemType::Active);
+			if (m_iItemId < 6)
+			{
+				dynamic_pointer_cast<CPlayer>(CObjMgr::Get_Instance().Get_Player())->Push_Item(item, CPlayer::ItemType::Active);
+			}
+			else
+			{
+				dynamic_pointer_cast<CPlayer>(CObjMgr::Get_Instance().Get_Player())->Push_Item(item, CPlayer::ItemType::Passive);
+			}
 			CUiMgr::Get_Instance()->m_LevelUi.CloseLevelUp();
 		}
 	}
@@ -61,7 +68,7 @@ void CLevelUpItem::Render(HDC hDC, const int& _X, const int& _Y)
 		CPngMgr::Get_Instance().DrawPngPart(hDC, L"LevelUp", m_tRect.left,m_tRect.top, 772, 136, 0, 136, 772, 136);
 	//BitBlt(hDC, _X + 10, _Y + 10, 50, 50, CBmpMgr::Get_Instance()->Find_Img(L"Item_Acttive_Slot"), 0, 0, SRCCOPY);
 	// BitBlt(hDC, m_tRect.left, m_tRect.top, 50, 50, CBmpMgr::Get_Instance()->Find_Img(L"Item_Acttive_Slot"), 0, 50 * m_ilevel, SRCCOPY);
-	GdiTransparentBlt(hDC, m_tRect.left, m_tRect.top, 46, 46, CBmpMgr::Get_Instance()->Find_Img(L"Item_Acttive_Slot"), 0, 46 * m_iItemId, 46, 46, RGB(36, 74, 53));
+	GdiTransparentBlt(hDC, m_tRect.left+30, m_tRect.top+50, 46, 36, CBmpMgr::Get_Instance()->Find_Img(L"Item_Slot"), 0, 46 * m_iItemId, 46, 36, RGB(36, 74, 53));
 }
 
 void CLevelUpItem::Release()

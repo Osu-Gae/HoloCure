@@ -37,6 +37,13 @@ void CItem::Update()
 		CSoundMgr::Get_Instance()->PlaySound(L"Bullet.wav", SOUND_BULLET, 1.f);
 		
 	}
+	else if (m_iItemId == 1)
+	{
+		shared_ptr<CPoison> poison = make_shared<CPoison>();
+		poison->Initialize();
+		CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_BULLET, poison);
+		m_fCoolTime = 100000.f;
+	}
 	else if (m_iItemId == 2)
 	{
 		shared_ptr<CLava> lava = make_shared<CLava>();
@@ -44,6 +51,14 @@ void CItem::Update()
 		lava->Set_Pos(Playerx + rand() % WINCX - WINCX / 2, Playery + rand() % WINCY - WINCY / 2);
 		CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_BULLET, lava);
 		m_fCoolTime = 3.f;
+	}
+	else if (m_iItemId == 3)
+	{
+		shared_ptr<BulletAx> Ax = make_shared<BulletAx>();
+		Ax->Initialize();
+		Ax->Set_XY(Playerx, Playery);
+		CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_BULLET, Ax);
+		m_fCoolTime = 2.f;
 	}
 	else if (m_iItemId == 4)
 	{
@@ -53,7 +68,7 @@ void CItem::Update()
 		CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_BULLET, Ax);
 		m_fCoolTime = 2.f;
 	}
-	else if (m_iItemId == 7)
+	else if (m_iItemId == 5)
 	{
 		shared_ptr<CBoomerang> boomerang = make_shared<CBoomerang>();
 		boomerang->Initialize();
@@ -62,17 +77,11 @@ void CItem::Update()
 		CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_BULLET, boomerang);
 		m_fCoolTime = 3.f;
 	}
-	else if (m_iItemId == 1)
-	{
-		shared_ptr<CPoison> poison = make_shared<CPoison>();
-		poison->Initialize();
-		CObjMgr::Get_Instance().Add_Object(OBJID::OBJ_BULLET, poison);
-		m_fCoolTime = 100000.f;
-	}
+	
 }
 
 
 void CItem::Render(HDC _hDC, int x, int y)
 {
-	GdiTransparentBlt(_hDC, x, y, 46, 46, CBmpMgr::Get_Instance()->Find_Img(L"Item_Acttive_Slot"), 0, 46*m_iItemId, 46, 46, RGB(36, 74, 53));
+	GdiTransparentBlt(_hDC, x, y, 46, 46, CBmpMgr::Get_Instance()->Find_Img(L"Item_Slot"), 0, 46*m_iItemId, 46, 46, RGB(36, 74, 53));
 }

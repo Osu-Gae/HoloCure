@@ -153,6 +153,7 @@ void CPlayer::LateUpdate()
 
 void CPlayer::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 {
+	CPngMgr::Get_Instance().DrawPngWithAlpha(hDC, L"PlayerUiT"s, 0, 0, 398, 174, 0.5f);
 	// 체력 출력 
 	HDC hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Red_Hp");
 	HDC hMemDC2 = CBmpMgr::Get_Instance()->Find_Img(L"Green_Hp");
@@ -178,6 +179,10 @@ void CPlayer::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 		{
 			m_vecActiveItem[i].Render(hDC,110 + 48 * i, 55);
 		}
+		for (int i = 0; i < m_vecPassiveItem.size(); ++i)
+		{
+			m_vecPassiveItem[i].Render(hDC, 110 + 48 * i, 120);
+		}
 
 }
 
@@ -202,7 +207,7 @@ void CPlayer::Push_Item(CItem _item, ItemType _type)
 	}
 	else
 	{
-		for (auto& el : m_vecActiveItem)
+		for (auto& el : m_vecPassiveItem)
 		{
 			if (el.GetItemId() == _item.GetItemId())
 			{
