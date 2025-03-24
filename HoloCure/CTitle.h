@@ -4,6 +4,7 @@
 #include "CSceneMgr.h"
 #include "CKeyMgr.h"
 #include "CPngMgr.h"
+#include "CStartButton.h"
 
 class CTitle : public CScene
 {
@@ -16,5 +17,7 @@ public:
 	virtual void LateUpdate() override;
 	virtual void Render(HDC hDC, int _iScrollX, int _iScrollY) override;
 	virtual void Release() override;
+private:
+	CStartButton button;
 };
 

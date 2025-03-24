@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CLava.h"
 
-CLava::CLava() : loop(0)
+CLava::CLava() : loop(0) 
 {
 }
 
@@ -16,7 +16,8 @@ void CLava::Initialize()
     m_tInfo = { 1500,500,254,254 };
 	m_fRadius = 100.f;
 	loop = 1;
-	m_iAttack = 1;
+	m_iAttack = 3;
+
 }
 
 void CLava::Update()

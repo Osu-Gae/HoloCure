@@ -13,6 +13,8 @@ public:
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/PlayerUiT.png", L"PlayerUiT");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Item/Item_1.png", L"Item_1");
         CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/LevelUp.png", L"LevelUp");
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Obj/Ui/Back.png", L"Back");
+        CPngMgr::Get_Instance().Insert_Png(L"../Image/Title/StartMenu.png", L"StartMenu");
     }
 public:
     static CPngMgr& Get_Instance() {

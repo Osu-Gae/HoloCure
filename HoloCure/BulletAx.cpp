@@ -15,7 +15,7 @@ void BulletAx::Initialize()
     m_fDeathTime = 3.f;
     m_fRadius = 30.f;
     m_tInfo = { 0,0,92,92 };
-	m_iAttack = 2;
+	m_iAttack = 8;
 }
 
 void BulletAx::Update()
@@ -57,10 +57,10 @@ void BulletAx::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
         m_tFrame.iStart*92, 0,
         92, 92,
         RGB(36, 74, 53));
-#ifdef _DEBUG
-    Ellipse(hDC, m_tInfo.fX-m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX+ _iScrollX + m_fRadius, m_tInfo.fY + _iScrollY+ m_fRadius);
-#endif // _DEBUG
+//#ifdef _DEBUG
+//    Ellipse(hDC, m_tInfo.fX-m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX+ _iScrollX + m_fRadius, m_tInfo.fY + _iScrollY+ m_fRadius);
+//#endif // _DEBUG
 
-    /*Ellipse(hDC, m_tInfo.fX - m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX + m_fRadius + _iScrollX, m_tInfo.fY + m_fRadius + _iScrollY);*/
+    // Ellipse(hDC, m_tInfo.fX - m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX + m_fRadius + _iScrollX, m_tInfo.fY + m_fRadius + _iScrollY);
 
 }

@@ -28,6 +28,7 @@ void CColliderMgr::Collision_Monster_Circle(list<shared_ptr<CObj>> DstList, list
 				dynamic_pointer_cast<CMonster>(pDst)->Set_Damaged();
 				pDst->Set_HP(pSrc->Get_Attack());
 				pDst->Set_InvisibleTime(0.15f);
+				CObjMgr::Get_Instance().Spawn_Damage(pSrc->Get_Attack(),pDst->Get_Pos_x(), pDst->Get_Pos_y()-30);
 			}
 		}
 	}

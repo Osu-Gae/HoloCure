@@ -71,16 +71,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Binary\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Binary\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Binary\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Binary\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -149,16 +149,24 @@
   <ItemGroup>
     <ClInclude Include="BulletAx.h" />
     <ClInclude Include="CAbstractFactory.h" />
+    <ClInclude Include="CBaelz.h" />
     <ClInclude Include="CBl.h" />
     <ClInclude Include="CBmpMgr.h" />
     <ClInclude Include="CBoomerang.h" />
+    <ClInclude Include="CBossBullet.h" />
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCamera.h" />
     <ClInclude Include="CColliderMgr.h" />
+    <ClInclude Include="CDamage.h" />
+    <ClInclude Include="CEndButton.h" />
+    <ClInclude Include="CEndCsene.h" />
     <ClInclude Include="CExp.h" />
     <ClInclude Include="CExpBar.h" />
+    <ClInclude Include="CFanDie.h" />
+    <ClInclude Include="CFubuki.h" />
     <ClInclude Include="CItem.h" />
     <ClInclude Include="CItemMgr.h" />
+    <ClInclude Include="CJirungE.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CKillUi.h" />
     <ClInclude Include="CLava.h" />
@@ -177,7 +185,9 @@
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CSoundMgr.h" />
+    <ClInclude Include="CSpawnMgr.h" />
     <ClInclude Include="CStage.h" />
+    <ClInclude Include="CStartButton.h" />
     <ClInclude Include="CTile.h" />
     <ClInclude Include="CTileMgr.h" />
     <ClInclude Include="CTimeMgr.h" />
@@ -193,16 +203,24 @@
   <ItemGroup>
     <ClCompile Include="BulletAx.cpp" />
     <ClCompile Include="CAbstractFactory.cpp" />
+    <ClCompile Include="CBaelz.cpp" />
     <ClCompile Include="CBl.cpp" />
     <ClCompile Include="CBmpMgr.cpp" />
     <ClCompile Include="CBoomerang.cpp" />
+    <ClCompile Include="CBossBullet.cpp" />
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCamera.cpp" />
     <ClCompile Include="CColliderMgr.cpp" />
+    <ClCompile Include="CDamage.cpp" />
+    <ClCompile Include="CEndButton.cpp" />
+    <ClCompile Include="CEndCsene.cpp" />
     <ClCompile Include="CExp.cpp" />
     <ClCompile Include="CExpBar.cpp" />
+    <ClCompile Include="CFanDie.cpp" />
+    <ClCompile Include="CFubuki.cpp" />
     <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CItemMgr.cpp" />
+    <ClCompile Include="CJirungE.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CKillUi.cpp" />
     <ClCompile Include="CLava.cpp" />
@@ -220,7 +238,9 @@
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CSoundMgr.cpp" />
+    <ClCompile Include="CSpawnMgr.cpp" />
     <ClCompile Include="CStage.cpp" />
+    <ClCompile Include="CStartButton.cpp" />
     <ClCompile Include="CTile.cpp" />
     <ClCompile Include="CTileMgr.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />

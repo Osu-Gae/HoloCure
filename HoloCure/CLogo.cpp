@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CLogo.h"
-
+#include "CSoundMgr.h"
 CLogo::CLogo()
 {
 }

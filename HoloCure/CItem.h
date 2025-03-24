@@ -8,6 +8,7 @@
 #include "BulletAx.h"
 #include "CPoison.h"
 #include "CSoundMgr.h"
+#include "CJirungE.h"
 class CItem
 {
 public:

@@ -4,6 +4,7 @@
 #include "CTimeMgr.h"
 #include "CPngMgr.h"
 #include "CSoundMgr.h"
+#include "CBmpMgr.h"
 #define MAX_LOADSTRING 100
 // gdi
 Gdiplus::GdiplusStartupInput g_GdiPlusStartupInput;
@@ -21,6 +22,8 @@ HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 HWND g_hWnd;
+HFONT hFont;
+HFONT hFontBig;
 
 int Playerx = 0;
 int Playery = 0;
@@ -61,6 +64,45 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	MainGame.Initialize();
 	CTimeMgr::GetInstance().Initialize();
 
+    // 폰트 등록 
+    const TCHAR* fontPath = L"../Font/DOSMyungjo.ttf";
+    AddFontResource(fontPath);
+     
+    hFont = CreateFont(
+        24,                 // 높이
+        0,                  // 너비 (0이면 자동)
+        0,                  // 각도
+        0,                  // 각도
+        FW_NORMAL,          // 두께
+        FALSE,              // 이탤릭
+        FALSE,              // 밑줄
+        FALSE,              // 취소선
+        ANSI_CHARSET,       // 문자 집합
+        OUT_DEFAULT_PRECIS, // 출력 정밀도
+        CLIP_DEFAULT_PRECIS,// 클리핑 정밀도
+        DEFAULT_QUALITY,    // 품질
+        DEFAULT_PITCH,      // 피치
+        L"DOSMyungjo"       // 폰트 이름 (AddFontResource로 로드한 폰트 사용)
+    );
+    hFontBig = CreateFont(
+        48,                 // 높이
+        0,                  // 너비 (0이면 자동)
+        0,                  // 각도
+        0,                  // 각도
+        FW_NORMAL,          // 두께
+        FALSE,              // 이탤릭
+        FALSE,              // 밑줄
+        FALSE,              // 취소선
+        ANSI_CHARSET,       // 문자 집합
+        OUT_DEFAULT_PRECIS, // 출력 정밀도
+        CLIP_DEFAULT_PRECIS,// 클리핑 정밀도
+        DEFAULT_QUALITY,    // 품질
+        DEFAULT_PITCH,      // 피치
+        L"DOSMyungjo"       // 폰트 이름 (AddFontResource로 로드한 폰트 사용)
+    );
+
+    // 마우스 커서 숨기기
+    ShowCursor(false);
     // 기본 메시지 루프입니다:
     while (true)
     {
@@ -85,6 +127,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             /*CTimeMgr::GetInstance().Update();
 			std::wstring title = L"Time: " + std::to_wstring(CTimeMgr::GetInstance().GetDeltaTime());
             SetWindowText(g_hWnd, title.c_str());*/
+            // 마우스 출력 
+			
+
             CTimeMgr::GetInstance().Update();
             MainGame.Update();
             MainGame.LateUpdate();

@@ -31,7 +31,7 @@ void CExp::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 {
 	GdiTransparentBlt(hDC, m_tRect.left + _iScrollX,m_tRect.top + _iScrollY,
 		128, 128, CBmpMgr::Get_Instance()->Find_Img(L"Exp_sheet"),
-		min(m_iExp/10, 5)*128, 0,
+		0, int(min(m_iExp / 10, 5)) * 128,
 		128, 128,
 		RGB(36, 74, 53));
 }

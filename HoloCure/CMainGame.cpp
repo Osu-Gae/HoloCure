@@ -44,6 +44,10 @@ void CMainGame::Render()
 
 	// 게임 씬 렌더링
 	CSceneMgr::Get_Instance().Render(hMemDC);
+	POINT pt;
+	GetCursorPos(&pt);
+	ScreenToClient(g_hWnd, &pt);
+	GdiTransparentBlt(hMemDC, pt.x - 30, pt.y - 30, 80, 82, CBmpMgr::Get_Instance()->Find_Img(L"Cursor"), 0, 0, 80, 82, RGB(134, 159, 249));
 
 	// 최종적으로 백 버퍼의 내용을 화면으로 복사
 	BitBlt(m_hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);

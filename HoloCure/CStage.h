@@ -15,6 +15,9 @@
 #include "CBullet.h"
 #include "CCamera.h"
 #include "CBoomerang.h"
+#include "CFubuki.h"
+#include "CBaelz.h"
+#include "CEndCsene.h"
 class CStage : public CScene
 {
 public:
@@ -27,5 +30,11 @@ public:
 	void LateUpdate() override;
 	void Render(HDC hDC, int _iScrollX, int _iScrollY) override;
 	void Release() override;
+// 테스트용 삭제 예정
+public:
+	void SetEnd() { end = true; }
+private:
+	CEndCsene endCsene;
+	bool end = false;
 };
 

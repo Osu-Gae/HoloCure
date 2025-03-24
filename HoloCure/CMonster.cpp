@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CMonster.h"
 #include "CUiMgr.h"
+#include "CSoundMgr.h"
 CMonster::CMonster() : m_bDamaged(false), m_bDamagedCount(0)
 {
 }
@@ -13,11 +14,11 @@ void CMonster::Initialize()
 {
 	m_tInfo = { WINCX >> 1 , WINCY >> 1, 128.f, 128.f };
 	m_tFrame = { 0 , 5, 0 ,CTimeMgr::GetInstance().GetTime(),0.1 }; // 여기서는 세번째 인자가 몬스터 종류임 
-	m_fSpeed = 150.f;
+	m_fSpeed = 100.f;
 	m_fRadius = 15.f;
 	m_iExp = 5;
 	m_iAttack = 2;
-	m_iHp = 20;
+	m_iHp = 60;
 	m_bDead = false;
 }
 
@@ -53,6 +54,7 @@ void CMonster::LateUpdate()
 		m_bDead = true;
 		CUiMgr::Get_Instance()->m_KillUi.UpKillCount();
 		CObjMgr::Get_Instance().Spawn_Exp(m_iExp, m_tInfo.fX, m_tInfo.fY);
+		CObjMgr::Get_Instance().Spawn_FanDie(m_tInfo.fX, m_tInfo.fY-50);
 	}
 }
 
@@ -109,9 +111,9 @@ void CMonster::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 
 
 	}
-#ifdef _DEBUG
-	Ellipse(hDC, m_tInfo.fX - m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX + m_fRadius + _iScrollX, m_tInfo.fY + m_fRadius + _iScrollY);
-#endif 
+//#ifdef _DEBUG
+//	Ellipse(hDC, m_tInfo.fX - m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX + m_fRadius + _iScrollX, m_tInfo.fY + m_fRadius + _iScrollY);
+//#endif 
 }
 
 void CMonster::Release()

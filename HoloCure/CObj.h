@@ -86,6 +86,7 @@ public:
 	}
 	void Update_Rect();
 	void Move_Frame();
+	void SetRect(const RECT& _rc) { m_tRect = _rc; }
 public:
 	virtual void Initialize() = 0;
 	virtual void Update() = 0;	

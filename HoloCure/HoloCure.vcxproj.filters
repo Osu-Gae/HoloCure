@@ -88,6 +88,9 @@
     <Filter Include="03. CObj\Exp">
       <UniqueIdentifier>{01246108-823c-4123-ab97-4510fa91b538}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. CObj\Boss">
+      <UniqueIdentifier>{e30f2638-d4ed-454c-b023-a0a2a556e297}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -186,9 +189,6 @@
     <ClInclude Include="CItemMgr.h">
       <Filter>01. Mgr\CItemMgr</Filter>
     </ClInclude>
-    <ClInclude Include="CSoundMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="BulletAx.h">
       <Filter>03. CObj\Bullet</Filter>
     </ClInclude>
@@ -207,14 +207,47 @@
     <ClInclude Include="CBullet.h">
       <Filter>03. CObj\Bullet</Filter>
     </ClInclude>
-    <ClInclude Include="CLevelUi.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CLevelUpItem.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CExp.h">
       <Filter>03. CObj\Exp</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevelUi.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevelUpItem.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundMgr.h">
+      <Filter>01. Mgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CJirungE.h">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CStartButton.h">
+      <Filter>02. Scene\03. Title</Filter>
+    </ClInclude>
+    <ClInclude Include="CDamage.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CFubuki.h">
+      <Filter>03. CObj\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="CBossBullet.h">
+      <Filter>03. CObj\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaelz.h">
+      <Filter>03. CObj\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="CEndCsene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CFanDie.h">
+      <Filter>04. Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CEndButton.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSpawnMgr.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,9 +335,6 @@
     <ClCompile Include="CItemMgr.cpp">
       <Filter>01. Mgr\CItemMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CSoundMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="BulletAx.cpp">
       <Filter>03. CObj\Bullet</Filter>
     </ClCompile>
@@ -323,14 +353,47 @@
     <ClCompile Include="CBullet.cpp">
       <Filter>03. CObj\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="CLevelUi.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CLevelUpItem.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CExp.cpp">
       <Filter>03. CObj\Exp</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevelUpItem.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevelUi.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundMgr.cpp">
+      <Filter>01. Mgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CJirungE.cpp">
+      <Filter>03. CObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CStartButton.cpp">
+      <Filter>02. Scene\03. Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CDamage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CFubuki.cpp">
+      <Filter>03. CObj\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="CBossBullet.cpp">
+      <Filter>03. CObj\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaelz.cpp">
+      <Filter>03. CObj\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="CEndCsene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CFanDie.cpp">
+      <Filter>04. Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CEndButton.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpawnMgr.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

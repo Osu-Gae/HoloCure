@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CUiMgr.h"
+#include "CTimeMgr.h"
 CUiMgr* CUiMgr::m_pInstance = nullptr;
 
 CUiMgr::CUiMgr()
@@ -15,7 +16,7 @@ void CUiMgr::Update()
 {
 	m_ExpBar.Update();
 	m_PlayerUi.Update(); // 추후 삭제 예정
-	m_TimeUi.PlusTime(0.01); // 추수 변경 예정 
+	m_TimeUi.PlusTime(CTimeMgr::GetInstance().GetDeltaTime()); // 추수 변경 예정
 	m_LevelUi.Update();
 }
 

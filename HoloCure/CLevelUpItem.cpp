@@ -19,6 +19,7 @@ CLevelUpItem::~CLevelUpItem()
 void CLevelUpItem::Initialize()
 {
 
+
 }
 
 void CLevelUpItem::Update()
@@ -43,7 +44,9 @@ void CLevelUpItem::Update()
 			{
 				dynamic_pointer_cast<CPlayer>(CObjMgr::Get_Instance().Get_Player())->Push_Item(item, CPlayer::ItemType::Passive);
 			}
+			CObjMgr::Get_Instance().Release_Stop();
 			CUiMgr::Get_Instance()->m_LevelUi.CloseLevelUp();
+			CSoundMgr::Get_Instance()->SetChannelVolume(CHANNELID::SOUND_BGM, 1.f);
 		}
 	}
 	else
@@ -69,6 +72,50 @@ void CLevelUpItem::Render(HDC hDC, const int& _X, const int& _Y)
 	//BitBlt(hDC, _X + 10, _Y + 10, 50, 50, CBmpMgr::Get_Instance()->Find_Img(L"Item_Acttive_Slot"), 0, 0, SRCCOPY);
 	// BitBlt(hDC, m_tRect.left, m_tRect.top, 50, 50, CBmpMgr::Get_Instance()->Find_Img(L"Item_Acttive_Slot"), 0, 50 * m_ilevel, SRCCOPY);
 	GdiTransparentBlt(hDC, m_tRect.left+30, m_tRect.top+50, 46, 36, CBmpMgr::Get_Instance()->Find_Img(L"Item_Slot"), 0, 46 * m_iItemId, 46, 36, RGB(36, 74, 53));
+
+	//SetBkMode(hDC, OPAQUE);
+	SetBkMode(hDC, TRANSPARENT);
+	SelectObject(hDC, hFont);
+	SetTextColor(hDC, RGB(255, 255, 255));
+	switch (m_iItemId)
+	{
+	case 0:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"탄환 주기가 줄어든다",11);
+		break;
+	case 1:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"데미지가 증가한다", 9);
+		break;
+	case 2:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"용암 개수가 늘어난다", 11);
+		break;
+	case 3:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"던지는 주기가 줄어든다", 12);
+		break;
+	case 4:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"소환되는 주기가 줄어든다", 13);
+		break;
+	case 5:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"더 빨리 던진다.", 8);
+		break;
+	case 6:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"이동속도가 10퍼 증가한다", 14);
+		break;
+	case 7:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"크리티컬 확률이 10퍼 증가한다 ", 17);
+		break;
+	case 8:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"크리티컬 데미지가 10퍼 증가한다 ", 18);
+		break;
+	case 9:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"공격 속도가 10퍼 증가한다", 15);
+		break;
+	case 10:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"적을 죽일 시 일정 확률로 피를 회복한다", 22);
+		break;
+	case 11:
+		TextOut(hDC, m_tRect.left + 100, m_tRect.top + 50, L"최대 HP가 10퍼 증가한다", 15);
+		break;
+	}
 }
 
 void CLevelUpItem::Release()

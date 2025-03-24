@@ -15,6 +15,7 @@ void CBoomerang::Initialize()
 	m_tInfo = { 0, 0, 128.f, 128.f };
 	m_fRadius = 50.f;
 	m_fDeathTime = 3.f;
+	m_iAttack = 8;
 }
 
 void CBoomerang::Update()

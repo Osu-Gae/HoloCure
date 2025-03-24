@@ -170,9 +170,9 @@ void CPlayer::Render(HDC hDC, const int& _iScrollX, const int& _iScrollY)
 		CPngMgr::Get_Instance().DrawPngPart(hDC, L"Player_watson", m_tRect.left + _iScrollX, m_tRect.top + _iScrollY,
 			m_tInfo.fCX, m_tInfo.fCY, m_tFrame.iStart * m_tInfo.fCX, m_tFrame.iMotion * m_tInfo.fCY, m_tInfo.fCX, m_tInfo.fCY);
 	}
-	#ifdef _DEBUG
+	/*#ifdef _DEBUG
 		Ellipse(hDC, m_tInfo.fX - m_fRadius + _iScrollX, m_tInfo.fY - m_fRadius + _iScrollY, m_tInfo.fX + m_fRadius + _iScrollX, m_tInfo.fY + m_fRadius + _iScrollY);
-	#endif 
+	#endif */
 
 	// æ∆¿Ã≈€ ΩΩ∑‘
 		for (int i = 0; i < m_vecActiveItem.size(); ++i)

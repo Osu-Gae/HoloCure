@@ -12,7 +12,7 @@ CPoison::~CPoison()
 void CPoison::Initialize()
 {
       m_tInfo = { 0,0,214,214 };
-	  m_iAttack = 1;
+	  m_iAttack = 3;
 	  m_fRadius = 100.f;
 }
 

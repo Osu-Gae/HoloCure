@@ -1,12 +1,15 @@
 #include "pch.h"
 #include "CStage.h"
 #include "BulletAx.h"
+#include "CColliderMgr.h"
+#include "CSpawnMgr.h"
 CStage::CStage()
 {
 }
 
 CStage::~CStage()
 {
+	Release();
 }
 
 void CStage::Initialize()
@@ -21,29 +24,47 @@ void CStage::Initialize()
 	CTileMgr::Get_Instance().Initialize();
 	shared_ptr<BulletAx> Ax = make_shared<BulletAx>();
 	CPngMgr::Get_Instance().Initailize();
-	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
+	CSoundMgr::Get_Instance()->StopAll();
 	CSoundMgr::Get_Instance()->PlayBGM(L"Grassy.mp3", SOUND_BGM);
+	CSoundMgr::Get_Instance()->SetChannelVolume(SOUND_BGM, 0.7f);
 
 }
 
 void CStage::Update()
 {
-	static int count = 0;
-	count++;
-	if (count > 100)
+	// 테스트용 삭제 예정
+	if (CKeyMgr::Get_Instance()->Key_Down('Z'))
 	{
-		CObjMgr::Get_Instance().Spawn_Monster(rand() % 38, Playerx, Playery);
-		count = 0;
+		// 삭제 예정
+		endCsene.Initialize();
+		SetEnd();
 	}
+	if (end)
+	{
+		endCsene.Update();
+		return;
+	}
+
+
+
+	CUiMgr::Get_Instance()->Update();
+	if (CObjMgr::Get_Instance().Get_TimeStop())
+		return;
+	CSpawnMgr::Get_Instance()->Update();
 
 	CTileMgr::Get_Instance().Update();
 	CObjMgr::Get_Instance().Update();
-	CUiMgr::Get_Instance()->Update();
 
 }
 
 void CStage::LateUpdate()
 {
+
+
+
+	if (CObjMgr::Get_Instance().Get_TimeStop())
+		return;
+
 	CTileMgr::Get_Instance().LateUpdate();
 	CObjMgr::Get_Instance().Late_Update();
 	CKeyMgr::Get_Instance()->Late_Update();
@@ -51,12 +72,19 @@ void CStage::LateUpdate()
 
 void CStage::Render(HDC hDC, int _iScrollX, int _iScrollY)
 {
+
+
 	CTileMgr::Get_Instance().Get_Instance().Render(hDC, _iScrollX, _iScrollY);
 	CObjMgr::Get_Instance().Render(hDC, _iScrollX , _iScrollY);
 	CUiMgr::Get_Instance()->Render(hDC, _iScrollX, _iScrollY);
+	if (end)
+	{
+		endCsene.Render(hDC);
+	}
 }
 
 void CStage::Release()
 {
+	CObjMgr::Get_Instance().Release();
 	CUiMgr::Get_Instance()->Destroy_Instance();
 }

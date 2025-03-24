@@ -15,7 +15,7 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 
 	if (m_ePreScene != m_eCurScene)
 	{
-
+		m_pScene.reset();
 		switch (m_eCurScene)
 		{
 			case SCENEID::LOGO:
@@ -27,6 +27,27 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 			case SCENEID::STAGE:
 				m_pScene = make_shared<CStage>();
 				break;
+		}
+
+		m_pScene->Initialize();
+		CCamera::Get_Instance().ClearXY();
+		m_ePreScene = m_eCurScene;
+	}
+	else
+	{
+		// ªË¡¶
+		m_pScene.reset();
+		switch (m_eCurScene)
+		{
+		case SCENEID::LOGO:
+			m_pScene = make_shared<CLogo>();
+			break;
+		case SCENEID::TITLE:
+			m_pScene = make_shared<CTitle>();
+			break;
+		case SCENEID::STAGE:
+			m_pScene = make_shared<CStage>();
+			break;
 		}
 
 		m_pScene->Initialize();

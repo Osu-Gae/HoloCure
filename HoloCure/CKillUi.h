@@ -13,6 +13,7 @@ public:
 	void Release();
 public:
 	void UpKillCount() { m_iKillCount++; }
+	int GetKillCount() { return m_iKillCount; }
 private:
 	int m_iKillCount;
 };

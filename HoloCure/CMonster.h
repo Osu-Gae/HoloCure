@@ -17,7 +17,7 @@ public:
 	void Set_Damaged()
 	{
 		m_bDamaged = true;
-		m_bDamagedCount = 10;
+		m_bDamagedCount = 1;
 	}
 public:
 	void Set_Id(int n)  

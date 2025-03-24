@@ -18,5 +18,6 @@ public:
 private:
 	POINT		m_tPoint[3];
 	float 	m_fAngle;
+	float m_fDeathTime;
 };
 
